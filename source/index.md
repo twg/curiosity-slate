@@ -58,9 +58,9 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace `meowmeowmeow` with your personal API key.
 </aside>
 
-# Kittens
+# Categories
 
-## Get All Kittens
+## Get All Categories
 
 ```ruby
 require 'kittn'
@@ -77,7 +77,7 @@ api.kittens.get()
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
+curl "http://api.curiosityclub.com/v1/categories"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -87,26 +87,32 @@ curl "http://example.com/api/kittens"
 [
   {
     "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "name": "science",
+    "label": "Science"
   },
   {
     "id": 2,
-    "name": "Isis",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
+    "name": "technology",
+    "label": "Technology"
+  },
+  {
+    "id": 3,
+    "name": "civilization",
+    "label": "Civilization"
+  },
+  {
+    "id": 4,
+    "name": "human_spirit",
+    "label": "Human Spirit"
   }
-]
+  ]
 ```
 
-This endpoint retrieves all kittens.
+This endpoint retrieves all categories.
 
 ### HTTP Request
 
-`GET http://example.com/kittens`
+`GET http://api.curiosityclub.com/v1/categories`
 
 ### Query Parameters
 
@@ -119,7 +125,7 @@ available | true | If set to false, the result will include kittens that have al
 Remember — a happy kitten is an authenticated kitten!
 </aside>
 
-## Get a Specific Kitten
+## Get a Specific Category
 
 ```ruby
 require 'kittn'
@@ -136,7 +142,7 @@ api.kittens.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/3"
+curl "http://api.curiosityclub.com/v1/categories/3"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -144,11 +150,9 @@ curl "http://example.com/api/kittens/3"
 
 ```json
 {
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "id": 1,
+  "name": "science",
+  "label": "Science"
 }
 ```
 
@@ -158,11 +162,11 @@ This endpoint retrieves a specific kitten.
 
 ### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
+`GET http://api.curiosityclub.com/v1/categories/<ID>`
 
 ### URL Parameters
 
 Parameter | Description
 --------- | -----------
-ID | The ID of the cat to retrieve
+ID | The ID of the category to retrieve
 
