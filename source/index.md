@@ -3,12 +3,13 @@ title: API Reference
 
 language_tabs:
   - shell
+  - php
   - ruby
   - python
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='#'>Developer Portal</a>
+  - <a href='http://github.com/tripit/slate'>Slate API Documentation</a>
 
 includes:
   - errors
@@ -20,7 +21,7 @@ search: true
 
 Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
-We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+We have language bindings in Shell, PHP, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 This example API documentation page was created with [Slate](http://github.com/tripit/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
@@ -38,6 +39,14 @@ api = Kittn::APIClient.authorize!('meowmeowmeow')
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
+```
+
+```php
+<?php
+include 'curiosityclub.php';
+
+$api = $curiosityclub->authorize('meowmeowmeow');
+?>
 ```
 
 ```shell
@@ -74,6 +83,15 @@ import kittn
 
 api = kittn.authorize('meowmeowmeow')
 api.kittens.get()
+```
+
+```php
+<?php
+include 'curiosityclub.php';
+
+$api = $curiosityclub->authorize('meowmeowmeow');
+$api->categories->get();
+?>
 ```
 
 ```shell
@@ -141,8 +159,17 @@ api = kittn.authorize('meowmeowmeow')
 api.kittens.get(2)
 ```
 
+```php
+<?php
+include 'curiosityclub.php';
+
+$api = $curiosityclub.authorize('meowmeowmeow');
+$api->categories->get(1);
+?>
+```
+
 ```shell
-curl "http://api.curiosityclub.com/v1/categories/3"
+curl "http://api.curiosityclub.com/v1/categories/1"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -156,7 +183,7 @@ curl "http://api.curiosityclub.com/v1/categories/3"
 }
 ```
 
-This endpoint retrieves a specific kitten.
+This endpoint retrieves a specific category.
 
 <aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
 
