@@ -54,6 +54,21 @@ This endpoint retrieves all categories.
 
 `GET http://api.curiosityclub.com/v1/categories`
 
+### HTTP Parameters
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+limit | false | 4 | The number of categories to retrieve on a single call
+page | false | 1 | The page number to start return
+
+### HTTP Response
+
+Parameter | Description
+--------- | -----------
+id | Category ID
+name | Category slug
+label | Category display name
+
 ## Get a Specific Category
 
 ```shell
@@ -83,6 +98,14 @@ This endpoint retrieves a specific category.
 Parameter | Description
 --------- | -----------
 ID | The ID of the category to retrieve
+
+### HTTP Response
+
+Parameter | Description
+--------- | -----------
+id | Category ID
+name | Category slug
+label | Category display name
 
 ## Get Experts by Category
 
