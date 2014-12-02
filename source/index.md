@@ -515,7 +515,7 @@ curl "http://api.curiosityclub.com/v1/tags/1"
 }
 ```
 
-This endpoint retrieves a specific expert.
+This endpoint retrieves a specific tag.
 
 ### HTTP Request
 
@@ -534,3 +534,97 @@ Parameter | Description
 id | Tag ID
 name | Tag slug
 label | Tag display name
+
+# Distributors
+
+## Get All Distributors
+
+```shell
+curl "http://api.curiosityclub.com/v1/distributors"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "curiosity_studios",
+      "label": "Curiosity Studios"
+    },
+    {
+      "id": 2,
+      "name": "altair_4_media",
+      "label": "Altair 4 Media"
+    }
+  ],
+  "paginator": {
+    "total_count": 9,
+    "total_pages": 5,
+    "current_page": 1,
+    "limit": 2
+  }
+}
+```
+
+This endpoint retrieves all distributors.
+
+### HTTP Request
+
+`GET http://api.curiosityclub.com/v1/distributors`
+
+### HTTP Parameters
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+limit | false | 3 | The number of distributors to retrieve on a single call
+page | false | 1 | The page number to start return
+
+### HTTP Response
+
+Parameter | Description
+--------- | -----------
+id | Distributor ID
+name | Distributor slug
+label | Distributor display name
+
+## Get a Specific Distributor
+
+```shell
+curl "http://api.curiosityclub.com/v1/distributors/1"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "curiosity_studios",
+      "label": "Curiosity Studios"
+    }
+  ]
+}
+```
+
+This endpoint retrieves a specific distributor.
+
+### HTTP Request
+
+`GET http://api.curiosityclub.com/v1/distributors/<ID>`
+
+### HTTP Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+ID | true | The ID of the distributor to retrieve
+
+### HTTP Response
+
+Parameter | Description
+--------- | -----------
+id | Distributor ID
+name | Distributor slug
+label | Distributor display name
