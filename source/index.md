@@ -628,3 +628,97 @@ Parameter | Description
 id | Distributor ID
 name | Distributor slug
 label | Distributor display name
+
+# Media
+
+## Get All Media
+
+```shell
+curl "http://api.curiosityclub.com/v1/media"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "curiosity_studios",
+      "label": "Curiosity Studios"
+    },
+    {
+      "id": 2,
+      "name": "altair_4_media",
+      "label": "Altair 4 Media"
+    }
+  ],
+  "paginator": {
+    "total_count": 9,
+    "total_pages": 5,
+    "current_page": 1,
+    "limit": 2
+  }
+}
+```
+
+This endpoint retrieves all media.
+
+### HTTP Request
+
+`GET http://api.curiosityclub.com/v1/media`
+
+### HTTP Parameters
+
+Parameter | Required | Default | Description
+--------- | -------- | ------- | -----------
+limit | false | 3 | The number of media to retrieve on a single call
+page | false | 1 | The page number to start return
+
+### HTTP Response
+
+Parameter | Description
+--------- | -----------
+id | Media ID
+name | Media slug
+label | Media display name
+
+## Get a Specific Media
+
+```shell
+curl "http://api.curiosityclub.com/v1/media/1"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "curiosity_studios",
+      "label": "Curiosity Studios"
+    }
+  ]
+}
+```
+
+This endpoint retrieves a specific media.
+
+### HTTP Request
+
+`GET http://api.curiosityclub.com/v1/distributors/<ID>`
+
+### HTTP Parameters
+
+Parameter | Required | Description
+--------- | -------- | -----------
+ID | true | The ID of the media to retrieve
+
+### HTTP Response
+
+Parameter | Description
+--------- | -----------
+id | Media ID
+name | Media slug
+label | Media display name
