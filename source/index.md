@@ -9,6 +9,7 @@ toc_footers:
   - <a href='http://github.com/tripit/slate'>Slate API Documentation</a>
 
 includes:
+  - mobile
   - paginator
   - errors
 
